@@ -5,7 +5,7 @@ import styles from "@/app/scss/custom-layout.module.scss";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-export default function page() {
+export default function Page() {
   const t = useTranslations("Layout");
 
   const [shapes, setShapes] = useState([

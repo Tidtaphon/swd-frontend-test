@@ -10,7 +10,6 @@ import {
   Popconfirm,
   Radio,
   DatePicker,
-  Spin,
 } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslations } from "next-intl";
@@ -31,7 +30,6 @@ import dayjs from "dayjs";
 export default function Page() {
   const tTable = useTranslations("Table");
   const tForm = useTranslations("Form");
-  const [loading, setLoading] = useState(true);
 
   const dispatch = useDispatch();
 
