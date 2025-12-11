@@ -1,0 +1,135 @@
+@use "./variables.scss" as *;
+
+.triangle {
+  width: 120px;
+  height: 120px;
+  background: $gray;
+}
+
+.triangle2 {
+  width: 88%;
+  height: 120px;
+  background: $gray;
+}
+
+.triangle_l {
+  @extend .triangle;
+  clip-path: polygon(0 50%, 100% 100%, 100% 0);
+}
+
+.triangle_r {
+  @extend .triangle;
+  clip-path: polygon(0 100%, 100% 50%, 0 0);
+}
+
+.triangle_t {
+  @extend .triangle;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.triangle_b {
+  @extend .triangle;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+.square {
+    @extend .triangle;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.circle {
+    @extend .triangle;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.ellipse {
+    @extend .triangle2;
+    clip-path: ellipse(50% 36% at 50% 50%);
+}
+
+.trapezoid {
+    @extend .triangle2;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.rectangle {
+    @extend .triangle2;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.parallelogram {
+    @extend .triangle2;
+    clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
+}
+
+.card {
+    position: relative;
+    transition: background 0.3s ease;
+    cursor: pointer;
+
+    &__layout-txt {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 50%;
+        bottom: -12px;
+        transform: translate(-50%, 0);
+        background: $primary-second;
+        color: white;
+        width: 120px;
+        border-radius: 35px;
+    }
+
+  &:hover {
+    background: $primary;
+    border: 1px solid $primary;
+  }
+}
+
+.page {
+    padding: 16px;
+    &__shape-layout {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.layoutGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.itemBox {
+  background: white;
+  border-radius: 14px;
+  padding: 0;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background: $primary;
+  }
+
+  &:nth-child(1),
+  &:nth-child(2),
+  &:nth-child(3) {
+    transform: translateX(25%);
+  }
+
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(6) {
+    transform: translateX(-25%);
+  }
+}
+
+
+
+
